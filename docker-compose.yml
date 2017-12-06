@@ -10,6 +10,8 @@ services:
       - POSTGRES_USER:'postgres'
       - POSTGRES_PASSWORD:'postgres'
   salsa:
+    tty: true
+    stdin_open: true
     environment:
       - TRUSTED_IP=0.0.0.0/0
       - RAILS_ENV=development
