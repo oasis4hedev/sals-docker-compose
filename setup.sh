@@ -5,4 +5,3 @@ sudo docker-compose build
 sudo docker-compose run salsa rake db:create
 sudo docker-compose run salsa rake db:migrate
 sudo docker-compose run salsa rake db:seed
-
