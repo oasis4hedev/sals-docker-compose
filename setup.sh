@@ -1,6 +1,9 @@
 
 mkdir salsa/tmp/db/postgres-data -p
-cp salsa/config/deploy/default/* salsa/config/
+
+cp -n salsa/config/deploy/default/config.yml salsa/config/
+cp -n salsa/config/deploy/default/database.yml salsa/config/
+
 sudo docker-compose build
 sudo docker-compose run salsa rake db:create
 sudo docker-compose run salsa rake db:migrate
