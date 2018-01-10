@@ -2,7 +2,7 @@
 
 Clone repository with submodules
 
-    git clone --recursive git@github.com:keith-ferney/salsa-docker-compose.git
+    git clone --recursive git@github.com:oasis4hedev/salsa-docker-compose.git
     cd salsa-docker-compose
 
 ### Setup Docker (for postgresql db)
