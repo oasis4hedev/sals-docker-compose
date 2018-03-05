@@ -1,4 +1,4 @@
-
+#!/bin/bash
 mkdir salsa/tmp/db/postgres-data -p
 mkdir salsa/tmp/log -p
 
@@ -9,3 +9,5 @@ sudo docker-compose build
 sudo docker-compose run salsa rake db:create
 sudo docker-compose run salsa rake db:migrate
 sudo docker-compose run salsa rake db:seed
+
+bash generate_secrets.sh
