@@ -8,7 +8,7 @@ services:
       - "54321:5432"
     environment:
       - POSTGRES_USER:'postgres'
-      - POSTGRES_PASSWORD:'postgres'
+      - POSTGRES_PASSWORD:'postgre'
   salsa:
     tty: true
     stdin_open: true
@@ -21,6 +21,7 @@ services:
       - .:/home/apps
       - ./salsa/tmp:/tmp
     ports:
+      - "80:3000"
       - "3000:3000"
     depends_on:
       - db
