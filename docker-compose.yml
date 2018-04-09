@@ -8,7 +8,7 @@ services:
       - "54321:5432"
     environment:
       - POSTGRES_USER:'postgres'
-      - POSTGRES_PASSWORD:'postgre'
+      - POSTGRES_PASSWORD:'postgres'
   salsa:
     tty: true
     stdin_open: true
