@@ -4,6 +4,11 @@ Clone repository with submodules
 
     git clone --recursive git@github.com:oasis4hedev/salsa-docker-compose.git
     cd salsa-docker-compose
+If that fails
+
+    git clone git@github.com:oasis4hedev/salsa-docker-compose.git
+    cd salsa-docker-compose
+    git clone git@github.com:oasis4hedev/salsa.git
 
 ### Setup Docker (for postgresql db)
 
@@ -19,7 +24,7 @@ Clone repository with submodules
 
     sudo curl -o /usr/local/bin/docker-compose -L "https://github.com/docker/compose/releases/download/1.15.0/docker-compose-$(uname -s)-$(uname -m)"
 
-    chmod +x /usr/local/bin/docker-compose
+    sudo chmod +x /usr/local/bin/docker-compose
 
 ### Setup salsa
 
