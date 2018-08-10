@@ -32,17 +32,17 @@ If that fails
 
 #### Database commands
 
-    sudo docker-compose run salsa rake db:create
-    sudo docker-compose run salsa rake db:migrate
-    sudo docker-compose run salsa rake db:seed
+    docker-compose run salsa rake db:create
+    docker-compose run salsa rake db:migrate
+    docker-compose run salsa rake db:seed
 
 #### Build (only if Gemfile or Dockerfile change)
 
-    sudo docker-compose build
+    docker-compose build
 
 ### Running the application
 
-    sudo docker-compose up
+    docker-compose up
 
     First time for a new hostname (support multi-tennants via differnet hostnames) visit http://0.0.0.0:3000/admin/organizations/new
 
@@ -57,12 +57,12 @@ If that fails
 
 ### Stopping application
 
-    sudo docker-compose down
+    docker-compose down
 
 ### Other useful docker commands
 
     docker images #list all docker images
-    sudo docker rmi ########    #remove docker image id from above command (useful to recreate db or application image if needed)
+    docker rmi ########    #remove docker image id from above command (useful to recreate db or application image if needed)
 
 ##### debuging
   attach to rails app for debugger
@@ -87,7 +87,7 @@ If that fails
 
 #### Running the queue (que gem)
 
-    sudo docker-compose exec salsa sh
+    docker-compose exec salsa sh
     cd /home/apps/salsa && RAILS_ENV=development que ./config/environment.rb
 
     #adding a report through rake
