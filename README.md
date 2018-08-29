@@ -26,23 +26,27 @@ If that fails
 
     sudo chmod +x /usr/local/bin/docker-compose
 
+### Add user to docker group  
+
+    sudo usermod -a -G docker $USER
+
 ### Setup salsa
 
     sh setup.sh
 
 #### Database commands
 
-    sudo docker-compose run salsa rake db:create
-    sudo docker-compose run salsa rake db:migrate
-    sudo docker-compose run salsa rake db:seed
+    docker-compose run salsa rake db:create
+    docker-compose run salsa rake db:migrate
+    docker-compose run salsa rake db:seed
 
 #### Build (only if Gemfile or Dockerfile change)
 
-    sudo docker-compose build
+    docker-compose build
 
 ### Running the application
 
-    sudo docker-compose up
+    docker-compose up
 
     First time for a new hostname (support multi-tennants via differnet hostnames) visit http://0.0.0.0:3000/admin/organizations/new
 
@@ -57,22 +61,22 @@ If that fails
 
 ### Stopping application
 
-    sudo docker-compose down
+    docker-compose down
 
 ### Other useful docker commands
 
     docker images #list all docker images
-    sudo docker rmi ########    #remove docker image id from above command (useful to recreate db or application image if needed)
+    docker rmi ########    #remove docker image id from above command (useful to recreate db or application image if needed)
 
 ##### testing with cucumber
 
   to run all cucumber tests
 
-    sudo docker-compose run salsa bash ./cucumber.sh
+    docker-compose run salsa bash ./cucumber.sh
 
   to run a specific test
 
-    sudo docker-compose run salsa bash
+    docker-compose run salsa bash
     cucumber features/name_of_test.feature RAILS_ENV=test
 
 
@@ -99,7 +103,7 @@ If that fails
 
 #### Running the queue (que gem)
 
-    sudo docker-compose exec salsa sh
+    docker-compose exec salsa sh
     cd /home/apps/salsa && RAILS_ENV=development que ./config/environment.rb
 
     #adding a report through rake
