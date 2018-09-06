@@ -3,8 +3,8 @@ if [ ! -f ./salsa/config/secrets.yml ]; then
   echo -e "\nGenerating a secrets.yml file"
 
   # Random Keys
-  KEY_DEV=$(sudo docker-compose run salsa rake secret)
-  KEY_TEST=$(sudo docker-compose run salsa rake secret)
+  KEY_DEV=$(docker-compose run salsa rake secret)
+  KEY_TEST=$(docker-compose run salsa rake secret)
 
   # Generate the file
   cat > ./salsa/config/secrets.yml <<EOL
