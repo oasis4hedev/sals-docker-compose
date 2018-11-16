@@ -22,7 +22,7 @@ if [ ! -f ./salsa/config/secrets.yml ]; then
 
 development:
   secret_key_base: ${KEY_DEV}
-  
+
 test:
   secret_key_base: ${KEY_TEST}
 

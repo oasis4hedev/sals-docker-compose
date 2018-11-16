@@ -10,4 +10,4 @@ docker-compose run salsa rake db:create
 docker-compose run salsa rake db:migrate
 docker-compose run salsa rake db:seed
 
-bash generate_secrets.sh
+bash salsa/generate_secrets.sh

@@ -26,6 +26,10 @@ If that fails
 
     sudo chmod +x /usr/local/bin/docker-compose
 
+### Add user to docker group  
+
+    sudo usermod -a -G docker $USER
+
 ### Setup salsa
 
     sh setup.sh
@@ -68,11 +72,11 @@ If that fails
 
   to run all cucumber tests
 
-    sudo docker-compose run salsa bash ./cucumber.sh
+    docker-compose run salsa bash ./cucumber.sh
 
   to run a specific test
 
-    sudo docker-compose run salsa bash
+    docker-compose run salsa bash
     cucumber features/name_of_test.feature RAILS_ENV=test
 
 
