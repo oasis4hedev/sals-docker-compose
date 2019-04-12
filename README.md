@@ -36,9 +36,9 @@ If that fails
 
 #### Database commands
 
-    docker-compose run salsa rake db:create
-    docker-compose run salsa rake db:migrate
-    docker-compose run salsa rake db:seed
+    docker-compose run --rm salsa rake db:create
+    docker-compose run --rm salsa rake db:migrate
+    docker-compose run --rm salsa rake db:seed
 
 #### Build (only if Gemfile or Dockerfile change)
 
@@ -72,11 +72,11 @@ If that fails
 
   to run all cucumber tests
 
-    docker-compose run salsa bash ./cucumber.sh
+    docker-compose run --rm salsa bash ./cucumber.sh
 
   to run a specific test
 
-    docker-compose run salsa bash
+    docker-compose run --rm salsa bash
     cucumber features/name_of_test.feature RAILS_ENV=test
 
 
